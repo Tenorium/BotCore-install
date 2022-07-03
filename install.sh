@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf .git
 git init
 git remote -f add origin https://github.com/Tenorium/BotCore.git
 git fetch origin
