@@ -8,3 +8,4 @@ git clean -fd
 git checkout -b master --track origin/master
 git reset origin/master
 git submodule update --init
+rm install.sh
