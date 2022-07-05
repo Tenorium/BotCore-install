@@ -14,10 +14,12 @@ spawnSync("npm", ["i", "auto-git-update@1.1.1"], {
 import("./node_modules/auto-git-update/index.js").then(imported => {
     const AutoGitUpdater = imported.default;
 
+    /** @type {Config} */
     let updaterConfig = {
         repository: "https://github.com/Tenorium/BotCore",
         branch: "master",
-        tempLocation: path.join(os.tmpdir(), 'botcore')
+        tempLocation: path.join(os.tmpdir(), 'botcore'),
+        executeOnComplete: "git submodule update --init"
     };
 
     let updater = new AutoGitUpdater(updaterConfig);
